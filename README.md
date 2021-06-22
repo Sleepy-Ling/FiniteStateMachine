@@ -1,3 +1,3 @@
-# testDemo
+# 有限状态机
 
-it's just a test ,uselessly.
+通过状态机切换状态，实现对游戏对象行为逻辑改变。
