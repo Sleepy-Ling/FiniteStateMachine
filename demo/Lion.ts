@@ -29,17 +29,17 @@ class Lion extends eui.Component {
         this.stateManager.SetInitState(new IdelState_Lion());
     }
     /**移动动作 */
-    public StartMoveTo(point: Point[], callBack?: Function) {
+    public startMoveTo(point: Point[], callBack?: Function) {
         let moveState = new MoveState_Lion(point, callBack);
         this.stateManager.ChangeState(moveState);
     }
     /**站动作 */
-    public Stand() {
+    public stand() {
         let idelState = new IdelState_Lion();
         this.stateManager.ChangeState(idelState);
     }
     /**根据某个方向位移（非移动动作） */
-    public Move(dir: Point) {
+    public move(dir: Point) {
         this._dir = dir;
         this._position.x += this._dir.x * this._speed;
         this._position.y += this._dir.y * this._speed;
@@ -47,17 +47,17 @@ class Lion extends eui.Component {
         this._ani.y = this._position.y;
     }
     /**赢得奖品动作 */
-    public GetReward(reward: number[], callBack?: Function) {
+    public getReward(reward: number[], callBack?: Function) {
         let GetRewardState = new GetRewardState_Lion(reward, callBack);
         this.stateManager.ChangeState(GetRewardState);
     }
     /**瞬移到某个位置动作 */
-    public FlyTo(position: Point, callBack1?: Function, callBack2?: Function) {
+    public flyTo(position: Point, callBack1?: Function, callBack2?: Function) {
         let changePosState = new ChangePosState_Lion(position, callBack1, callBack2);
         this.stateManager.ChangeState(changePosState);
     }
-    public Victory() {
-        let VictoryState = new VictoryState_Lion();
+    public victory() {
+        let victoryState = new VictoryState_Lion();
         this.stateManager.ChangeState(VictoryState);
     }
     /**设置狮子的位置 */
